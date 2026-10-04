@@ -1,0 +1,165 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #0b0f19;
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  background: #111827;
+  border-bottom: 1px solid #2a2f3a;
+}
+
+nav h2 {
+  color: #f5c542;
+  letter-spacing: 2px;
+}
+
+nav div {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #f5c542;
+}
+
+section {
+  min-height: 70vh;
+  padding: 100px 8%;
+}
+
+#home {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 1000px;
+}
+
+#home p:first-child {
+  color: #f5c542;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+#home h1 {
+  font-size: clamp(50px, 8vw, 90px);
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+#home h2 {
+  font-size: clamp(22px, 4vw, 38px);
+  color: #d1d5db;
+  margin-bottom: 25px;
+}
+
+#home p {
+  max-width: 700px;
+  color: #9ca3af;
+  font-size: 18px;
+}
+
+button {
+  margin-top: 30px;
+  margin-right: 15px;
+  padding: 14px 25px;
+  border: 1px solid #f5c542;
+  background: #f5c542;
+  color: #0b0f19;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background: transparent;
+  color: #f5c542;
+}
+
+section h2 {
+  color: #f5c542;
+  font-size: 40px;
+  margin-bottom: 25px;
+}
+
+section p {
+  color: #d1d5db;
+  max-width: 800px;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav div {
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  section {
+    padding: 80px 6%;
+  }
+}
+.profile-image {
+  position: relative;
+  z-index: 2;
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--gold);
+  box-shadow:
+    0 0 35px rgba(212, 175, 55, 0.25),
+    0 0 80px rgba(212, 175, 55, 0.08);
+}
+
+.hero-card-info {
+  position: relative;
+  z-index: 2;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.hero-card-info strong {
+  display: block;
+  color: white;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+}
+
+.hero-card-info span {
+  display: block;
+  margin-top: 5px;
+  color: #777;
+  font-size: 8px;
+  letter-spacing: 2px;
+}
