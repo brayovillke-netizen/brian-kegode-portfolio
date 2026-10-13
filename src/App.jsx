@@ -2,75 +2,80 @@
 import { useState } from "react";
 import "./index.css";
 
-const categories = [
+const services = [
   {
     number: "01",
-    tag: "PRODUCTIVITY",
-    title: "Digital Tools",
+    icon: "💻",
+    title: "Digital Solutions",
     description:
-      "Discover useful online tools and services for productivity, business and personal growth.",
+      "Explore digital tools, software and online services designed to make work and everyday life easier.",
+    tag: "TECHNOLOGY",
   },
   {
     number: "02",
-    tag: "FINTECH",
-    title: "Financial Platforms",
+    icon: "📊",
+    title: "Financial Technology",
     description:
-      "Explore financial technology platforms and learn how their products and services work.",
+      "Discover financial platforms and digital services, with clear information to help you make informed choices.",
+    tag: "FINTECH",
   },
   {
     number: "03",
-    tag: "DIGITAL",
-    title: "Online Opportunities",
+    icon: "🚀",
+    title: "Digital Opportunities",
     description:
-      "Find digital services and platforms to help you develop skills and explore new opportunities.",
+      "Find online platforms, useful resources and opportunities to learn, connect and grow.",
+    tag: "OPPORTUNITY",
   },
 ];
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  function closeMenu() {
-    setMenuOpen(false);
-  }
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <div className="site kegova-site">
+    <div className="site kegode-site">
       <header className="navbar">
         <a
           className="logo"
           href="#home"
+          aria-label="Kegode Technologies home"
           onClick={closeMenu}
-          aria-label="Kegova home"
         >
-          <span>K</span>
-          <div>
-            <strong>KEGOVA</strong>
-            <small>DIGITAL DISCOVERY</small>
+          <span className="logo-mark">K</span>
+          <div className="logo-copy">
+            <strong>KEGODE</strong>
+            <small>TECHNOLOGIES</small>
           </div>
         </a>
 
         <nav className="desktop-nav">
           <a href="#home">Home</a>
-          <a href="#discover">Discover</a>
+          <a href="#services">Services</a>
           <a href="#about">About</a>
           <a href="#partners">Partners</a>
           <a href="#contact">Contact</a>
         </nav>
 
+        <a className="nav-cta" href="#contact">
+          Let's Connect <span>↗</span>
+        </a>
+
         <button
           className="menu-button"
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
-          {menuOpen ? "X" : "☰"}
+          {menuOpen ? "✕" : "☰"}
         </button>
 
         {menuOpen && (
           <nav className="mobile-nav">
             <a href="#home" onClick={closeMenu}>Home</a>
-            <a href="#discover" onClick={closeMenu}>Discover</a>
+            <a href="#services" onClick={closeMenu}>Services</a>
             <a href="#about" onClick={closeMenu}>About</a>
             <a href="#partners" onClick={closeMenu}>Partners</a>
             <a href="#contact" onClick={closeMenu}>Contact</a>
@@ -81,220 +86,266 @@ function App() {
       <main>
         <section id="home" className="hero">
           <div className="hero-content">
-            <p className="eyebrow">WELCOME TO KEGOVA</p>
+            <div className="eyebrow">
+              <span className="status-dot"></span>
+              TECHNOLOGY FOR WHAT'S NEXT
+            </div>
 
             <h1>
-              Discover smarter
+              Ideas into impact.
               <br />
-              ways to <span>move forward.</span>
+              <span>Technology into</span>
+              <br />
+              opportunity.
             </h1>
 
-            <h2>Your gateway to useful digital platforms.</h2>
-
             <p className="hero-text">
-              We help people discover digital tools, financial technology
-              platforms and online services through straightforward
-              information and carefully selected resources.
+              Welcome to Kegode Technologies. We connect people with useful
+              digital solutions, emerging technologies and online platforms
+              that open up new possibilities.
             </p>
 
             <div className="hero-buttons">
-              <a href="#discover" className="btn primary">
-                Explore Platforms →
+              <a href="#services" className="btn primary">
+                Explore Our Services <span>→</span>
               </a>
               <a href="#about" className="btn secondary">
-                Discover Kegova
+                Discover Our Vision
               </a>
             </div>
 
-            <p className="kegova-note">
-              Independent discovery. Clear information. Smarter choices.
-            </p>
+            <div className="hero-trust">
+              <span className="trust-icon">✦</span>
+              <span>Innovation</span>
+              <span className="trust-divider">/</span>
+              <span>Access</span>
+              <span className="trust-divider">/</span>
+              <span>Opportunity</span>
+            </div>
           </div>
 
-          <div className="hero-card kegova-hero-card">
-            <div className="card-glow"></div>
+          <div className="hero-visual">
+            <div className="visual-orb orb-one"></div>
+            <div className="visual-orb orb-two"></div>
 
-            <div className="kegova-symbol" aria-hidden="true">
-              K<span>.</span>
+            <div className="tech-panel">
+              <div className="panel-top">
+                <div className="panel-dots">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+                <span className="panel-label">THE DIGITAL FUTURE</span>
+              </div>
+
+              <div className="big-k">K<span>.</span></div>
+
+              <div className="panel-brand">
+                <strong>KEGODE</strong>
+                <span>TECHNOLOGIES</span>
+              </div>
+
+              <div className="panel-line"></div>
+
+              <div className="panel-bottom">
+                <span>THINK BIGGER.</span>
+                <span>BUILD SMARTER.</span>
+              </div>
             </div>
 
-            <div className="hero-card-info">
-              <strong>KEGOVA</strong>
-              <span>DISCOVER. LEARN. EXPLORE.</span>
+            <div className="floating-card floating-card-top">
+              <span className="floating-icon blue-icon">✦</span>
+              <div>
+                <strong>Think digitally</strong>
+                <small>Explore new possibilities</small>
+              </div>
             </div>
 
-            <div className="kegova-card-bottom">
-              <span>INDEPENDENT DIGITAL DISCOVERY</span>
-              <span>KE · GLOBAL</span>
+            <div className="floating-card floating-card-bottom">
+              <span className="floating-icon purple-icon">↗</span>
+              <div>
+                <strong>Move forward</strong>
+                <small>Ideas meet opportunity</small>
+              </div>
             </div>
           </div>
         </section>
 
-        <section id="discover" className="section">
-          <p className="section-label">01 — DISCOVER</p>
+        <section className="stats-strip">
+          <div>
+            <strong>01</strong>
+            <span>Curiosity drives innovation</span>
+          </div>
+          <div>
+            <strong>02</strong>
+            <span>Technology creates possibilities</span>
+          </div>
+          <div>
+            <strong>03</strong>
+            <span>Trust builds lasting value</span>
+          </div>
+        </section>
 
-          <h2 className="section-title">
-            Explore what's <span>possible.</span>
-          </h2>
+        <section id="services" className="section">
+          <div className="section-heading">
+            <p className="section-label">01 / WHAT WE DO</p>
+            <h2 className="section-title">
+              Technology with <span>purpose.</span>
+            </h2>
+            <p className="section-intro">
+              We're building a digital destination for discovering services,
+              platforms and resources that can help people move forward.
+            </p>
+          </div>
 
-          <p className="contact-text">
-            Start with a category that interests you. We're building a useful
-            directory of platforms and services, with more resources to be
-            added as they are reviewed.
-          </p>
+          <div className="services-grid">
+            {services.map((service) => (
+              <article className="service-card" key={service.number}>
+                <div className="service-card-top">
+                  <span className="service-icon">{service.icon}</span>
+                  <span className="service-number">{service.number}</span>
+                </div>
 
-          <div className="projects-grid">
-            {categories.map((category) => (
-              <article className="project-card" key={category.number}>
-                <span className="project-number">{category.number}</span>
-                <span className="kegova-category-tag">{category.tag}</span>
+                <span className="service-tag">{service.tag}</span>
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
 
-                <h3>{category.title}</h3>
-                <p>{category.description}</p>
-
-                <a className="kegova-text-link" href="#partners">
-                  Explore resources <span aria-hidden="true">→</span>
+                <a className="service-link" href="#partners">
+                  Discover more <span>↗</span>
                 </a>
               </article>
             ))}
           </div>
         </section>
 
-        <section id="about" className="section">
-          <p className="section-label">02 — ABOUT US</p>
-
-          <h2 className="section-title">
-            Built around <span>better discovery.</span>
-          </h2>
-
-          <div className="about-grid">
-            <div>
-              <p>
-                Kegova is an independent digital discovery and marketing brand
-                focused on helping people find useful online platforms and
-                services.
-              </p>
-
-              <p>
-                Our goal is to make discovering digital products simpler
-                through accessible information, transparent recommendations
-                and useful resources.
-              </p>
-
-              <p>
-                As we grow, we aim to develop partnerships with reputable
-                businesses and connect interested users with services that fit
-                their needs.
-              </p>
+        <section id="about" className="section about-section">
+          <div className="about-visual">
+            <div className="about-gradient"></div>
+            <div className="about-monogram">K<span>.</span></div>
+            <div className="about-caption">
+              <span>OUR MINDSET</span>
+              <strong>Think beyond today.</strong>
             </div>
+          </div>
 
-            <div className="about-highlight">
-              <strong>OUR PRINCIPLES</strong>
-              <ul>
-                <li>Clear and accessible information</li>
-                <li>Responsible recommendations</li>
-                <li>Transparent affiliate disclosures</li>
-                <li>Trust before commissions</li>
-              </ul>
-            </div>
+          <div className="about-content">
+            <p className="section-label">02 / WHO WE ARE</p>
+            <h2 className="section-title">
+              Built for a <span>digital world.</span>
+            </h2>
+
+            <p>
+              Kegode Technologies is an emerging technology and digital
+              discovery brand focused on connecting people with useful online
+              platforms, services and ideas.
+            </p>
+
+            <p>
+              Our vision is to make technology easier to discover and
+              understand while exploring responsible partnerships and
+              practical digital solutions.
+            </p>
+
+            <ul className="principles-list">
+              <li><span>✓</span> Clear and accessible information</li>
+              <li><span>✓</span> Responsible digital recommendations</li>
+              <li><span>✓</span> Transparent business relationships</li>
+              <li><span>✓</span> Long-term trust and value</li>
+            </ul>
+
+            <a className="btn primary" href="#contact">
+              Get to Know Us <span>→</span>
+            </a>
           </div>
         </section>
 
-        <section id="partners" className="section">
-          <p className="section-label">03 — PARTNERSHIPS</p>
-
-          <h2 className="section-title">
-            Let's grow <span>together.</span>
-          </h2>
-
-          <p className="contact-text">
-            We welcome conversations with legitimate digital businesses,
-            software providers and financial technology platforms interested
-            in reaching new audiences.
-          </p>
-
-          <div className="experience-grid">
-            <article className="experience-card">
-              <span>FOR BUSINESSES</span>
-              <h3>Partnership enquiries</h3>
-
-              <p>
-                Interested in working with Kegova? Contact us to discuss
-                potential marketing and referral partnerships.
-              </p>
-
-              <a className="kegova-text-link" href="#contact">
-                Get in touch →
-              </a>
-            </article>
-
-            <article className="experience-card">
-              <span>FOR VISITORS</span>
-              <h3>Honest recommendations</h3>
-
-              <p>
-                We aim to explain what platforms offer and direct visitors to
-                official providers. Partner relationships will be identified
-                transparently.
-              </p>
-            </article>
+        <section id="partners" className="section partners-section">
+          <div className="partners-banner">
+            <div className="partners-glow"></div>
+            <p className="section-label">03 / PARTNER WITH US</p>
+            <h2>
+              Good ideas grow
+              <br />
+              <span>when we connect.</span>
+            </h2>
+            <p>
+              Are you a digital business, software provider or technology
+              platform? Let's explore opportunities to create value together.
+            </p>
+            <a href="#contact" className="btn light-btn">
+              Discuss a Partnership <span>↗</span>
+            </a>
           </div>
 
-          <p className="kegova-disclosure">
-            Kegova is developing its partner directory. No platform should be
-            considered an official partner unless that relationship has been
-            confirmed.
+          <p className="disclosure">
+            Kegode Technologies is developing its partner directory. No company
+            is represented as an official partner unless that relationship has
+            been confirmed. Some future links may be affiliate links, which
+            will be disclosed where applicable.
           </p>
         </section>
 
         <section id="contact" className="section contact-section">
-          <p className="section-label">04 — CONTACT</p>
+          <div className="section-heading">
+            <p className="section-label">04 / CONTACT</p>
+            <h2 className="section-title">
+              Let's make <span>something happen.</span>
+            </h2>
+            <p className="section-intro">
+              Have a business proposal, partnership idea or question? We'd like
+              to hear from you.
+            </p>
+          </div>
 
-          <h2 className="section-title">
-            Have an idea? <span>Let's talk.</span>
-          </h2>
-
-          <p className="contact-text">
-            For partnership proposals, business enquiries or feedback, reach
-            out to the Kegova team.
-          </p>
-
-          <div className="hero-buttons">
+          <div className="contact-card">
+            <div className="contact-card-icon">✉</div>
+            <div className="contact-card-copy">
+              <strong>Start a conversation</strong>
+              <span>Business enquiries and partnerships</span>
+              <a href="mailto:briankegode129@gmail.com">
+                briankegode129@gmail.com
+              </a>
+            </div>
             <a
-              href="mailto:briankegode129@gmail.com?subject=Kegova%20Business%20Enquiry"
-              className="btn primary"
+              className="contact-arrow"
+              href="mailto:briankegode129@gmail.com?subject=Kegode%20Technologies%20Business%20Enquiry"
+              aria-label="Email Kegode Technologies"
             >
-              Email Kegova →
+              ↗
             </a>
+          </div>
 
+          <div className="social-links">
             <a
               href="https://www.instagram.com/Kegode129"
               target="_blank"
               rel="noreferrer"
-              className="btn secondary"
             >
-              Instagram
+              Instagram ↗
+            </a>
+            <a href="mailto:briankegode129@gmail.com">
+              Email ↗
             </a>
           </div>
-
-          <p className="kegova-note">
-            Email: briankegode129@gmail.com
-          </p>
         </section>
       </main>
 
-      <footer>
-        <div className="kegova-footer-brand">
-          <strong>K.</strong> KEGOVA
-        </div>
+      <footer className="site-footer">
+        <a className="footer-brand" href="#home">
+          <span className="footer-mark">K</span>
+          <span>
+            <strong>KEGODE</strong>
+            <small>TECHNOLOGIES</small>
+          </span>
+        </a>
 
         <p>
-          Copyright © {new Date().getFullYear()} Kegova. All rights reserved.
+          © {new Date().getFullYear()} Kegode Technologies. All rights reserved.
         </p>
 
-        <p className="kegova-footer-note">
-          Independent digital discovery and marketing.
-        </p>
+        <a className="back-to-top" href="#home">
+          Back to top ↑
+        </a>
       </footer>
     </div>
   );
